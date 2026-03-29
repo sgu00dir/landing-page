@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Hide scrollbars for scroll containers */
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Simple fade/slide for rotating hero word */
+.word-fade {
+  animation: wordFade 0.5s ease-in-out;
+}
+@keyframes wordFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cooler 3D flip transition for rotating hero word */
+.word-stage { perspective: 900px; }
+.word { position: absolute; left: 0; top: 0; will-change: transform, opacity; }
+.word-enter { animation: wordFlipIn 600ms cubic-bezier(.2,.8,.2,1); }
+.word-leave { animation: wordFlipOut 600ms cubic-bezier(.2,.8,.2,1); }
+@keyframes wordFlipIn {
+  0% { opacity: 0; transform: rotateX(-80deg) translateY(-6px); filter: blur(2px); }
+  100% { opacity: 1; transform: rotateX(0deg) translateY(0); filter: blur(0); }
+}
+@keyframes wordFlipOut {
+  0% { opacity: 1; transform: rotateX(0deg) translateY(0); filter: blur(0); }
+  100% { opacity: 0; transform: rotateX(80deg) translateY(6px); filter: blur(2px); }
+}
+
+/* removed per-character morph for simplicity */
+
+/* Outcomes card: arrow oscillates while hovering the card */
+.group:hover .lf-arrow {
+  animation: lf-arrow-move 900ms ease-in-out infinite alternate;
+}
+@keyframes lf-arrow-move {
+  from { transform: translateX(0); }
+  to { transform: translateX(1rem); }
+}
