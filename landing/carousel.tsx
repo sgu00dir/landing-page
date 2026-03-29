@@ -17,8 +17,8 @@ const slides: Slide[] = [
     ],
     img: [
       "/images/dashboard.png",
-      "/images/Screenshot 2026-02-09 at 11.48.21.png",
-      "/images/Screenshot 2026-02-09 at 12.32.37.png",
+      "/images/screenshot-2026-02-09-11-48-21.png",
+      "/images/screenshot-2026-02-09-12-32-37.png",
     ],
   },
   // Placeholder slides 2 and 3; we will replace copy/images next.
